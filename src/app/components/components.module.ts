@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HorizontalBarChartComponent } from './horizontal-bar-chart/horizontal-bar-chart.component';
 import { RouterModule } from '@angular/router';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -13,10 +15,14 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
+    
   ],
   exports:[
     NavbarComponent,
+    HorizontalBarChartComponent
 ]
 })
 export class ComponentsModule { }
