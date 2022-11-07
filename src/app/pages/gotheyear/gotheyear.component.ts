@@ -15,4 +15,8 @@ games:Game[]=[];
     this.gameService.getNominees().subscribe((resp)=>this.games=resp);
   }
 
+  vote(gameId:string){
+    this.gameService.vote(gameId).subscribe((resp)=>{console.log(resp)})
+  }
+
 }

@@ -1,1 +1,23 @@
-<p>{{games | json}}</p>
+<h2>Vote</h2>
+<hr>
+<div class="row">
+    
+      <div class="card-group">
+        <div class="card bg-dark"
+        *ngFor="let game of games"
+        >
+        <img [src]="game.url" alt="" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{game.name}}</h5>
+            <!-- <p class="card-text">
+                {{game.votes}}
+            </p> -->
+
+            <button class="btn btn-block btn-primary" (click)="vote(game.id)">Vote</button>
+        </div>
+        
+    </div>
+
+    
+</div>
+

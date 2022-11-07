@@ -17,4 +17,9 @@ export class GameService {
     return this.http.get<Game[]>(`${environment.url}/api/gameoftheyear`);
   }
 
+  vote(id:string){
+    return this.http.post(`${environment.url}/api/gameoftheyear/${id}`,{});
+
+  }
+
 }
