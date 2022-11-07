@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 // import { single } from './data';
@@ -7,7 +7,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   templateUrl: './horizontal-bar-chart.component.html',
   styleUrls: ['./horizontal-bar-chart.component.css']
 })
-export class HorizontalBarChartComponent implements OnInit {
+export class HorizontalBarChartComponent implements OnInit, OnDestroy {
   result: any[]=[
     {
       "name": "Game 1",
@@ -40,10 +40,30 @@ export class HorizontalBarChartComponent implements OnInit {
 
   colorScheme = 'nightLights'
 
-
+interval;
   constructor() { }
+  ngOnDestroy(): void {
+clearInterval(this.interval)
+  }
 
   ngOnInit(): void {
+
+    // this.result.forEach(game => {
+    //   game.value = Math.round(Math.random()*100);
+
+    // });
+
+    this.interval= setInterval(()=>{
+      // console.log('thick');
+      const newResults = [...this.result];
+
+      newResults.forEach(game => {
+        game.value = Math.round(Math.random()*100);
+  
+      });
+      this.result=[...newResults];;
+    },1500)
+
   }
 
 
