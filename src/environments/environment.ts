@@ -4,7 +4,15 @@
 
 export const environment = {
   production: false,
-  url: 'http://localhost:5000/firestorechart-25b0d/us-central1'
+  url: 'http://localhost:5000/firestorechart-25b0d/us-central1',
+  firebaseConfig: {
+    apiKey: "AIzaSyBcejpPuttNbq0WWWBJk-eX2S86SNsCexc",
+    authDomain: "firestorechart-25b0d.firebaseapp.com",
+    projectId: "firestorechart-25b0d",
+    storageBucket: "firestorechart-25b0d.appspot.com",
+    messagingSenderId: "221683371534",
+    appId: "1:221683371534:web:2d309518d1dc6cc3c5365f"
+  }
 };
 
 /*

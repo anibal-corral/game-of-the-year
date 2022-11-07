@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 // import { single } from './data';
@@ -8,24 +8,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   styleUrls: ['./horizontal-bar-chart.component.css']
 })
 export class HorizontalBarChartComponent implements OnInit, OnDestroy {
-  result: any[]=[
-    {
-      "name": "Game 1",
-      "value": 10
-    },
-    {
-      "name": "Game 2",
-      "value": 20
-    },
-    {
-      "name": "Game 3",
-      "value": 5
-    },
-    {
-      "name": "Game 4",
-      "value": 8
-    }
-  ];
+
+  @Input() result: any[]=[];
   view = [700, 400];
 
   // options
@@ -43,7 +27,7 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
 interval;
   constructor() { }
   ngOnDestroy(): void {
-clearInterval(this.interval)
+// clearInterval(this.interval)
   }
 
   ngOnInit(): void {
@@ -53,16 +37,16 @@ clearInterval(this.interval)
 
     // });
 
-    this.interval= setInterval(()=>{
-      // console.log('thick');
-      const newResults = [...this.result];
+    // this.interval= setInterval(()=>{
+    //   // console.log('thick');
+    //   const newResults = [...this.result];
 
-      newResults.forEach(game => {
-        game.value = Math.round(Math.random()*100);
+    //   newResults.forEach(game => {
+    //     game.value = Math.round(Math.random()*100);
   
-      });
-      this.result=[...newResults];;
-    },1500)
+    //   });
+    //   this.result=[...newResults];;
+    // },1500)
 
   }
 
