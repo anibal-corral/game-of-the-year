@@ -3,14 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InitComponent } from './pages/init/init.component';
+import { GotheyearComponent } from './pages/gotheyear/gotheyear.component';
+// import { NavbarComponent } from './components/navbar/navbar.component';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InitComponent,
+    GotheyearComponent,
+    // NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
