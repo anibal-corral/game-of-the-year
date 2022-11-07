@@ -21,6 +21,8 @@ games:Game[]=[];
       (resp:any)=>{
       if(resp.ok){
         Swal.fire('Success', resp.msg,'success');
+      }else{
+        Swal.fire('Error', resp.msg,'error');
       }  
       }
       )
