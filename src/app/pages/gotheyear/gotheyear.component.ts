@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/app/interfaces/interfaces';
+import Swal from 'sweetalert2';
 import { GameService } from '../../services/game.service';
 
 @Component({
@@ -16,7 +17,13 @@ games:Game[]=[];
   }
 
   vote(gameId:string){
-    this.gameService.vote(gameId).subscribe((resp)=>{console.log(resp)})
+    this.gameService.vote(gameId).subscribe(
+      (resp:any)=>{
+      if(resp.ok){
+        Swal.fire('Success', resp.msg,'success');
+      }  
+      }
+      )
   }
 
 }
